@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const link = (
@@ -53,12 +53,16 @@ const Nav = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className=" menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
+          <ul tabIndex={0} className="space-y-4 bg-gray-100  menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
             {link}
+            <div className=" lg:hidden">
+              <a className="btn bg-[#23BE0A] text-white mr-3">Sign In</a>
+              <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
+            </div>
           </ul>
         </div>
 
-        <h1 className=" text-xl md:text-2xl font-bold">Book Vibe</h1>
+        <h1 className=" text-xl md:text-2xl font-bold hidden lg:block">Book Vibe</h1>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -66,8 +70,11 @@ const Nav = () => {
       </div>
 
       <div className="navbar-end">
-        <a className="btn bg-[#23BE0A] text-white mr-3">Sign In</a>
-        <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
+        <div className="hidden lg:block">
+          <a className="btn bg-[#23BE0A] text-white mr-3">Sign In</a>
+          <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
+        </div>
+        <h1 className=" text-xl md:text-2xl font-bold lg:hidden">Book Vibe</h1>
       </div>
     </div>
   );
