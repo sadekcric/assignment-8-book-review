@@ -4,15 +4,42 @@ const Nav = () => {
   const link = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 border-[#23BE0A] text-[#23BE0A] rounded-lg py-2 px-6 font-semibold mr-2 hover:bg-[#23BE0A] hover:bg-opacity-40 hover:text-black"
+              : "rounded-lg py-2 px-6 font-semibold mr-2 border-2 border-transparent"
+          }
+        >
+          Home
+        </NavLink>
       </li>
 
       <li>
-        <NavLink to="/list">Listed Books</NavLink>
+        <NavLink
+          to="/list"
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 border-[#23BE0A] text-[#23BE0A] rounded-lg py-2 px-6 font-semibold mr-2 hover:bg-[#23BE0A] hover:bg-opacity-40 hover:text-black"
+              : "rounded-lg py-2 px-6 font-semibold mr-2 border-2 border-transparent"
+          }
+        >
+          Listed Books
+        </NavLink>
       </li>
 
       <li>
-        <NavLink to="/pages">Pages</NavLink>
+        <NavLink
+          to="/pages"
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 border-[#23BE0A] text-[#23BE0A] rounded-lg py-2 px-6 font-semibold mr-2 hover:bg-[#23BE0A] hover:bg-opacity-40 hover:text-black"
+              : "rounded-lg py-2 px-6 font-semibold mr-2 border-2 border-transparent"
+          }
+        >
+          Pages
+        </NavLink>
       </li>
     </>
   );
@@ -26,7 +53,7 @@ const Nav = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className=" menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
             {link}
           </ul>
         </div>
@@ -35,12 +62,12 @@ const Nav = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{link}</ul>
+        <ul className=" menu-horizontal px-1">{link}</ul>
       </div>
 
       <div className="navbar-end">
-        <a className="btn">Sign In</a>
-        <a className="btn">Sign Up</a>
+        <a className="btn bg-[#23BE0A] text-white mr-3">Sign In</a>
+        <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
       </div>
     </div>
   );
