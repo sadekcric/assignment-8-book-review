@@ -1,10 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dropdown } from "flowbite-react";
-
-import { Link, Outlet } from "react-router-dom";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import { getItem, getWishList } from "../utils/localStor";
+import ReadCart from "../Components/ReadCart";
+import WishListCart from "./../Components/WishListCart";
 
 const ListedBooks = () => {
-  const [active, setActive] = useState(0);
+  // const [active, setActive] = useState(0);
+  const [readItems, setReadItems] = useState([]);
+  const [getWish, setGetWish] = useState([]);
+
+  const handleClick = () => {
+    const sortBook = readItems.sort((a, b) => b.rating - a.rating);
+    const sortWish = getWish.sort((a, b) => b.rating - a.rating);
+    setReadItems([...sortBook]);
+    setGetWish([...sortWish]);
+  };
+
+  const handlePageNumber = () => {
+    const sortBook = readItems.sort((a, b) => b.totalPages - a.totalPages);
+    const sortWish = getWish.sort((a, b) => b.totalPages - a.totalPages);
+    setReadItems([...sortBook]);
+    setGetWish([...sortWish]);
+  };
+
+  const handlePublished = () => {
+    const sortBook = readItems.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+    const sortWish = getWish.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+    setReadItems([...sortBook]);
+    setGetWish([...sortWish]);
+  };
+
+  console.log(readItems);
+
+  useEffect(() => {
+    const wishItem = getWishList();
+    setGetWish(wishItem);
+  }, []);
+
+  useEffect(() => {
+    const read = getItem();
+    setReadItems(read);
+  }, []);
 
   return (
     <div className="">
@@ -15,39 +53,31 @@ const ListedBooks = () => {
 
         <div className="flex items-center justify-center mb-24 ">
           <Dropdown label="Sort By" color="teal">
-            <Dropdown.Item>Rating</Dropdown.Item>
-            <Dropdown.Item>Number of pages</Dropdown.Item>
-            <Dropdown.Item>Published</Dropdown.Item>
+            <Dropdown.Item onClick={handleClick}>Rating</Dropdown.Item>
+            <Dropdown.Item onClick={handlePageNumber}>Number of pages</Dropdown.Item>
+            <Dropdown.Item onClick={handlePublished}>Published</Dropdown.Item>
           </Dropdown>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 ">
-            <Link
-              to=""
-              onClick={() => setActive(0)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                active === 0 ? "border-2 border-b-0" : "border-b-2"
-              }  dark:border-gray-600 dark:text-gray-600`}
-            >
-              <span className="text-xl font-semibold">Read Books</span>
-            </Link>
-            <Link
-              to="wish"
-              onClick={() => setActive(1)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                active === 1 ? "border-2 border-b-0" : "border-b-2"
-              }  dark:border-gray-600 dark:text-gray-600`}
-            >
-              <span className="text-xl font-semibold">Wishlist Books</span>
-            </Link>
+        <Tabs>
+          <div className="mb-10 text-lg lg:text-xl font-semibold">
+            <TabList>
+              <Tab>Read Books</Tab>
+              <Tab>Wishlist Books</Tab>
+            </TabList>
           </div>
-          <div className=" absolute border-b-2 w-full bottom-0 left-[305px]"></div>
-        </div>
-      </div>
 
-      <div className="overflow-x-clip">
-        <Outlet />
+          <TabPanel>
+            {readItems.map((book) => (
+              <ReadCart key={book.bookId} read={book} />
+            ))}
+          </TabPanel>
+          <TabPanel>
+            {getWish.map((book) => (
+              <WishListCart key={book.bookId} book={book} />
+            ))}
+          </TabPanel>
+        </Tabs>
       </div>
     </div>
   );

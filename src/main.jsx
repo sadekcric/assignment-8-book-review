@@ -9,8 +9,6 @@ import Pages from "./pages/Pages";
 import BookDetails from "./Components/BookDetails";
 import ErrorMessage from "./Components/ErrorMessage";
 import { Toaster } from "react-hot-toast";
-import Read from "./Components/Read";
-import WishList from "./Components/WishList";
 import Contact from "./Components/Contact";
 import About from "./Components/About";
 
@@ -41,16 +39,6 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <ListedBooks />,
-        children: [
-          {
-            path: "",
-            element: <Read />,
-          },
-          {
-            path: "wish",
-            element: <WishList />,
-          },
-        ],
       },
       {
         path: "/pages",

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const ReadCart = ({ read }) => {
   const { bookId, image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = read;
 
+  // console.log(tags);
   return (
     <div className="mb-5 flex flex-col lg:flex-row lg:gap-10 gap-5 p-4 border-2 border-gray-200 rounded-lg items-center">
       <div className=" p-10 bg-gray-100 rounded-lg">
@@ -20,9 +21,9 @@ const ReadCart = ({ read }) => {
         <div className="grid grid-cols-1 lg:flex gap-5 items-center">
           <p className="lg:text-lg font-bold">Tag</p>
 
-          <p className="lg:text-lg bg-[#23BE0A] bg-opacity-30 text-[#23BE0A] font-semibold px-6 py-2 rounded-full">#{tags[0]}</p>
+          <p className="lg:text-lg bg-[#23BE0A] bg-opacity-30 text-[#23BE0A] font-semibold px-6 py-2 rounded-full">{tags[0]}</p>
 
-          <p className="lg:text-lg bg-[#23BE0A] bg-opacity-30 text-[#23BE0A] font-semibold px-6 py-2 rounded-full">#{tags[1]}</p>
+          <p className="lg:text-lg bg-[#23BE0A] bg-opacity-30 text-[#23BE0A] font-semibold px-6 py-2 rounded-full">{tags[1]}</p>
           <p className="flex items-center gap-1 lg:text-lg">
             <span>
               <CiLocationOn />
