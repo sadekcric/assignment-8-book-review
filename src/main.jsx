@@ -11,6 +11,8 @@ import ErrorMessage from "./Components/ErrorMessage";
 import { Toaster } from "react-hot-toast";
 import Read from "./Components/Read";
 import WishList from "./Components/WishList";
+import Contact from "./Components/Contact";
+import About from "./Components/About";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: "/pages",
         element: <Pages />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
