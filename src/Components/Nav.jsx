@@ -41,6 +41,32 @@ const Nav = () => {
           Pages
         </NavLink>
       </li>
+
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 border-[#23BE0A] text-[#23BE0A] rounded-lg py-2 px-6 font-semibold mr-2 hover:bg-[#23BE0A] hover:bg-opacity-40 hover:text-black"
+              : "rounded-lg py-2 px-6 font-semibold mr-2 border-2 border-transparent"
+          }
+        >
+          About
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "border-2 border-[#23BE0A] text-[#23BE0A] rounded-lg py-2 px-6 font-semibold mr-2 hover:bg-[#23BE0A] hover:bg-opacity-40 hover:text-black"
+              : "rounded-lg py-2 px-6 font-semibold mr-2 border-2 border-transparent"
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
 

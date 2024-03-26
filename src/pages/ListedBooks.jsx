@@ -7,18 +7,17 @@ const ListedBooks = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <div>
+    <div className="">
       <div>
-        <div className="py-5 rounded-xl bg-gray-200 mt-10 mb-10">
+        <div className="py-10 rounded-xl bg-gray-200 mt-10 mb-10">
           <h1 className="text-3xl lg:text-5xl font-bold playFire text-center">Books</h1>
         </div>
 
         <div className="flex items-center justify-center mb-24 ">
           <Dropdown label="Sort By" color="teal">
-            <Dropdown.Item>Dashboard</Dropdown.Item>
-            <Dropdown.Item>Settings</Dropdown.Item>
-            <Dropdown.Item>Earnings</Dropdown.Item>
-            <Dropdown.Item>Sign out</Dropdown.Item>
+            <Dropdown.Item>Rating</Dropdown.Item>
+            <Dropdown.Item>Number of pages</Dropdown.Item>
+            <Dropdown.Item>Published</Dropdown.Item>
           </Dropdown>
         </div>
 
@@ -71,7 +70,10 @@ const ListedBooks = () => {
           <div className=" absolute border-b-2 w-full bottom-0 left-52"></div>
         </div>
       </div>
-      <Outlet />
+
+      <div className="overflow-x-clip">
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CiLocationOn } from "react-icons/ci";
 import { RiGroupLine } from "react-icons/ri";
 import { RiPagesLine } from "react-icons/ri";
