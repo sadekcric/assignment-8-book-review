@@ -16,11 +16,11 @@ const setItem = (book) => {
   const isExist = items.find((item) => item.bookId === book.bookId);
 
   if (isExist) {
-    toast.error("Book Already Read!");
+    toast.error("You have already this Book");
   } else {
     items.push(book);
     localStorage.setItem("books", JSON.stringify(items));
-    toast.success("Successfully added!");
+    toast.success("Book Added to Read List");
   }
 };
 
@@ -44,16 +44,16 @@ const setWishList = (book) => {
   const filterInRead = reads.find((b) => b.bookId === book.bookId);
 
   if (filterInRead) {
-    toast.error("Book already Read");
+    toast.error("You have already this Book");
   } else {
     const WishList = getWish.find((item) => item.bookId === book.bookId);
 
     if (!WishList) {
       getWish.push(book);
       localStorage.setItem("wishList", JSON.stringify(getWish));
-      toast.success("Successfully added!");
+      toast.success("Books Added to Wishlist Successfully!");
     } else {
-      toast.error("Item is Already Listed");
+      toast.error("Books Already Listed Wishlist.");
     }
   }
 };

@@ -15,7 +15,7 @@ const WishListCart = ({ book }) => {
 
         <p className="lg:text-lg font-semibold">By: {author} </p>
 
-        <div className="flex gap-5 items-center">
+        <div className="grid grid-col-1 lg:flex gap-5 items-center">
           <p className="lg:text-lg font-bold">Tag</p>
 
           <p className="lg:text-lg bg-[#23BE0A] bg-opacity-30 text-[#23BE0A] font-semibold px-6 py-2 rounded-full">#{tags[0]}</p>
@@ -29,7 +29,7 @@ const WishListCart = ({ book }) => {
           </p>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="grid grid-col-1 lg:flex items-center gap-8">
           <p className="flex items-center gap-1 lg:text-lg">
             <span>
               <RiGroupLine />
@@ -46,7 +46,7 @@ const WishListCart = ({ book }) => {
 
         <div className="w-full border-b"></div>
 
-        <div className="flex items-center gap-8">
+        <div className="grid grid-col-1 lg:flex items-center gap-8">
           <p className="bg-[#328EFF] bg-opacity-30 text-[#328EFF] font-semibold px-6 py-2 rounded-full">Category: {category}</p>
 
           <p className="bg-[#FFAC33] bg-opacity-30 text-[#FFAC33] font-semibold px-6 py-2 rounded-full">Rating: {rating}</p>
