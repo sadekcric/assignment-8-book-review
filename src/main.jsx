@@ -9,6 +9,8 @@ import Pages from "./pages/Pages";
 import BookDetails from "./Components/BookDetails";
 import ErrorMessage from "./Components/ErrorMessage";
 import { Toaster } from "react-hot-toast";
+import Read from "./Components/Read";
+import WishList from "./Components/WishList";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("./bookList.json"),
+        loader: async () => {
+          const res = await fetch("https://raw.githubusercontent.com/sadekcric/data-json/main/bookList.json");
+          const data = await res.json();
+          return data;
+        },
       },
       {
         path: "/:id",
@@ -29,6 +35,16 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <ListedBooks />,
+        children: [
+          {
+            path: "",
+            element: <Read />,
+          },
+          {
+            path: "wish",
+            element: <WishList />,
+          },
+        ],
       },
       {
         path: "/pages",

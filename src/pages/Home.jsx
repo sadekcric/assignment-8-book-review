@@ -1,9 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Books from "../Components/Books";
+import { useEffect, useState } from "react";
 
 const Home = () => {
-  const books = useLoaderData();
+  const items = useLoaderData();
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    setBooks(items);
+  }, [items]);
 
   return (
     <div>
@@ -14,8 +21,8 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {books.map((book) => (
-          <Books key={book.bookId} book={book} />
+        {books?.map((book, idx) => (
+          <Books key={idx} book={book} />
         ))}
       </div>
     </div>

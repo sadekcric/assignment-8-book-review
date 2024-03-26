@@ -1,5 +1,5 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
-import { setItem } from "../utils/localStor";
+import { useLoaderData, useParams } from "react-router-dom";
+import { setItem, setWishList } from "../utils/localStor";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -11,7 +11,11 @@ const BookDetails = () => {
   const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
 
   const handleReadBtn = (book) => {
-    setItem("books", book);
+    setItem(book);
+  };
+
+  const handleWishBtn = (book) => {
+    setWishList(book);
   };
 
   return (
@@ -62,7 +66,10 @@ const BookDetails = () => {
               Read
             </button>
 
-            <button className="px-8 py-4 rounded-lg mr-5 border-2 bg-[#50B1C9] text-white hover:bg-opacity-70 transition font-semibold">
+            <button
+              onClick={() => handleWishBtn(book)}
+              className="px-8 py-4 rounded-lg mr-5 border-2 bg-[#50B1C9] text-white hover:bg-opacity-70 transition font-semibold"
+            >
               Wishlist
             </button>
           </div>

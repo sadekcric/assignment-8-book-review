@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Dropdown } from "flowbite-react";
 
+import { Link, Outlet } from "react-router-dom";
+
 const ListedBooks = () => {
   const [active, setActive] = useState(0);
 
@@ -21,10 +23,9 @@ const ListedBooks = () => {
 
       <div className="relative overflow-hidden">
         <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 ">
-          <a
+          <Link
+            to=""
             onClick={() => setActive(0)}
-            rel="noopener noreferrer"
-            href="#"
             className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
               active === 0 ? "border-2 border-b-0" : "border-b-2"
             }  dark:border-gray-600 dark:text-gray-600`}
@@ -42,11 +43,10 @@ const ListedBooks = () => {
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
             </svg>
             <span>Read</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="wish"
             onClick={() => setActive(1)}
-            rel="noopener noreferrer"
-            href="#"
             className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
               active === 1 ? "border-2 border-b-0" : "border-b-2"
             }  dark:border-gray-600 dark:text-gray-600`}
@@ -65,10 +65,11 @@ const ListedBooks = () => {
               <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
             </svg>
             <span>Wishlist</span>
-          </a>
+          </Link>
         </div>
         <div className=" absolute border-b-2 w-full bottom-0 left-52"></div>
       </div>
+      <Outlet />
     </>
   );
 };
