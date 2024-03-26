@@ -1,4 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { setItem } from "../utils/localStor";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -8,6 +9,10 @@ const BookDetails = () => {
   const book = books.find((b) => b.bookId === intId);
 
   const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
+
+  const handleReadBtn = (book) => {
+    setItem("books", book);
+  };
 
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800 mt-10">
@@ -30,8 +35,8 @@ const BookDetails = () => {
 
           <div className="flex gap-5 items-center pb-5 border-b-2 border-gray-200">
             <p className="font-bold">Tag</p>
-            <p className="px-4 py-1 rounded-full bg-[#23BE0A] bg-opacity-10 text-[#23BE0A] font-semibold">{tags[0]}</p>
-            <p className="px-4 py-1 rounded-full bg-[#23BE0A] bg-opacity-10 text-[#23BE0A] font-semibold">{tags[1]}</p>
+            <p className="px-4 py-1 rounded-full bg-[#23BE0A] bg-opacity-10 text-[#23BE0A] font-semibold">#{tags[0]}</p>
+            <p className="px-4 py-1 rounded-full bg-[#23BE0A] bg-opacity-10 text-[#23BE0A] font-semibold">#{tags[1]}</p>
           </div>
 
           <table>
@@ -50,16 +55,16 @@ const BookDetails = () => {
           </table>
 
           <div>
-            <Link>
-              <button className="px-8 py-4 rounded-lg mr-5 border-2 border-gray-300 hover:border-[#23BE0A] transition font-semibold">
-                Read
-              </button>
-            </Link>
-            <Link>
-              <button className="px-8 py-4 rounded-lg mr-5 border-2 bg-[#50B1C9] text-white hover:bg-opacity-70 transition font-semibold">
-                Wishlist
-              </button>
-            </Link>
+            <button
+              onClick={() => handleReadBtn(book)}
+              className="px-8 py-4 rounded-lg mr-5 border-2 border-gray-300 hover:border-[#23BE0A] transition font-semibold"
+            >
+              Read
+            </button>
+
+            <button className="px-8 py-4 rounded-lg mr-5 border-2 bg-[#50B1C9] text-white hover:bg-opacity-70 transition font-semibold">
+              Wishlist
+            </button>
           </div>
         </div>
       </div>
