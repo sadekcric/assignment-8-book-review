@@ -1,7 +1,5 @@
 import toast from "react-hot-toast";
 
-const getWish = getWishList();
-
 const getItem = () => {
   const item = localStorage.getItem("books");
 
@@ -29,7 +27,7 @@ const setItem = (book) => {
 // WishList
 
 const getWishList = () => {
-  const item = localStorage.getItem("WishList");
+  const item = localStorage.getItem("wishList");
 
   if (item) {
     return JSON.parse(item);
@@ -37,6 +35,8 @@ const getWishList = () => {
 
   return [];
 };
+
+const getWish = getWishList();
 
 const setWishList = (book) => {
   const reads = getItem();

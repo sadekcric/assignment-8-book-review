@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import { getWishList } from "../utils/localStor";
+import WishListCart from "./WishListCart";
 
 const WishList = () => {
-  const [getWish, setGetWith] = useState([]);
+  const [getWish, setGetWish] = useState([]);
 
   useEffect(() => {
-    const wishItem = getWishList("books");
-    setGetWith([...getWish, wishItem]);
+    const wishItem = getWishList();
+    setGetWish(wishItem);
   }, []);
 
-  console.log(getWish);
   return (
-    <div>
-      <h2>This is Wish list</h2>
+    <div className="mt-10">
+      {getWish.map((book) => (
+        <WishListCart key={book.bookId} book={book} />
+      ))}
     </div>
   );
 };

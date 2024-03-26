@@ -30,7 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <BookDetails />,
-        loader: () => fetch("./bookList.json"),
+        loader: async () => {
+          const res = await fetch("https://raw.githubusercontent.com/sadekcric/data-json/main/bookList.json");
+          const data = await res.json();
+          return data;
+        },
       },
       {
         path: "/list",

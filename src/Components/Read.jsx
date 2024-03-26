@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import { getItem } from "../utils/localStor";
+import ReadCart from "../Components/ReadCart";
 
 const Read = () => {
-  const [getRead, setRead] = useState([]);
+  const [readItems, setReadItems] = useState([]);
 
   useEffect(() => {
-    const readItem = getItem();
-    setRead([...getRead, readItem]);
+    const read = getItem();
+    setReadItems(read);
   }, []);
 
-  console.log(getRead);
   return (
-    <div>
-      <h2>This is Read Item</h2>
+    <div className="mt-10">
+      {readItems.map((book) => (
+        <ReadCart key={book.bookId} read={book} />
+      ))}
     </div>
   );
 };
