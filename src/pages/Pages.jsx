@@ -28,8 +28,8 @@ const Pages = () => {
   return (
     <div className="h-[calc(100vh-144px)] flex items-center justify-center overflow-x-clip">
       <BarChart
-        width={700}
-        height={500}
+        width={1100}
+        height={600}
         data={book}
         margin={{
           top: 20,

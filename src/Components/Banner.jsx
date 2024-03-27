@@ -6,7 +6,7 @@ const Banner = () => {
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className=" bg-gray-100 rounded-2xl mt-10  flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:gap-20">
         <div className="flex flex-col space-y-10 justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-xl lg:text-left ">
-          <h1 className=" text-5xl font-bold sm:text-6xl playFire leading-normal">Books to freshen up your bookshelf</h1>
+          <h1 className=" text-5xl font-bold sm:text-6xl playFire">Books to freshen up your bookshelf</h1>
 
           <div className="flex flex-col sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
