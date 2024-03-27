@@ -1,10 +1,10 @@
-# Book Blaze
+# Book Vibe
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.bookblaze.com)](https://sadekur-assignment-8.netlify.app/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.bookVibe.com)](https://sadekur-assignment-8.netlify.app/)
 
 ## Overview
 
-Book Blaze is a free online book library where users can access and read a diverse collection of books. With a curated selection of nine books covering various genres and topics, Book Blaze aims to promote reading and provide an enjoyable reading experience for all visitors.
+Book Vibe is a free online book library where users can access and read a diverse collection of books. With a curated selection of nine books covering various genres and topics, Book Vibe aims to promote reading and provide an enjoyable reading experience for all visitors.
 
 ## Features
 
@@ -16,7 +16,7 @@ Book Blaze is a free online book library where users can access and read a diver
 
 ## Getting Started
 
-To start reading books on Book Blaze, simply visit the [website](https://www.bookblaze.com) and start browsing the available collection. No sign-up or registration is required!
+To start reading books on Book Vibe, simply visit the [website](https://www.bookVibe.com) and start browsing the available collection. No sign-up or registration is required!
 
 ## Usage
 
@@ -27,7 +27,7 @@ To start reading books on Book Blaze, simply visit the [website](https://www.boo
 
 ## Contributing
 
-Book Blaze is an open-source project, and contributions are welcome! If you'd like to contribute, please refer to our [Contribution Guidelines](CONTRIBUTING.md) for more information.
+Book Vibe is an open-source project, and contributions are welcome! If you'd like to contribute, please refer to our [Contribution Guidelines](CONTRIBUTING.md) for more information.
 
 ## License
 
@@ -35,8 +35,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Support
 
-For any questions, feedback, or issues, please contact us at [contact@bookblaze.com](mailto:contact@bookblaze.com).
+For any questions, feedback, or issues, please contact us at [contact@bookVibe.com](mailto:contact@bookVibe.com).
 
 ## About the Author
 
-Book Blaze is developed and maintained by [Your Name or Your Team Name]. We are passionate about promoting reading and making books accessible to everyone.
+Book Vibe is developed and maintained by [Your Name or Your Team Name]. We are passionate about promoting reading and making books accessible to everyone.
