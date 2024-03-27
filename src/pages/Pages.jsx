@@ -1,6 +1,6 @@
 import { getItem } from "../utils/localStor";
 import { useEffect, useState } from "react";
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
@@ -41,6 +41,7 @@ const Pages = () => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="bookName" />
         <YAxis />
+        <Tooltip />
         <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: "top" }}>
           {book.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
